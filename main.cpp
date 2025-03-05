@@ -1,0 +1,73 @@
+#include <iostream>
+#include <cstdlib>
+using namespace std;
+int normalBall = 2;
+int lightBall = 1;
+int heavyBall = 3;
+int answer;
+int ball1,ball2,ball3;
+int l_choice;
+int h_choice;
+
+int game(){
+    cout<<"The average weight is 2kg, to win you have to find balls the weights 3 and 1 kg, you can choose 3 balls to measure at one time pressing 1, to end the game press 0, to say your answers press 2, have a nice game";
+    int arr[12] = {2,2,2,2,2,2,2,2,2,2,2,2};
+    int l = rand() % 11;
+    int h = rand() % 11;
+    
+    while(l == h){
+        h = rand() % 11;
+    }
+    
+    for(int i = 0; i < 12; i++){
+        if(i == h){
+            arr[i] = 3;
+        }if(i == l){
+            arr[i] = 1;
+        }
+    }
+    
+    for(int i = 0; i <100000; i++){
+        cout<<"What are you going to do? ";
+        cin>>answer;
+        
+        if(answer == 0){
+            cout<<"The game is over";
+            return -1;
+        }
+        if(answer == 1){
+            cout<<"What balls you want to choose?";
+            cin>>ball1;
+            cin>>ball2;
+            cin>>ball3;
+            cout<<"The sum is "<<arr[ball1]+arr[ball2]+arr[ball3]<<endl;
+            cout<<"What do you want to choose next? 0,1,2";
+        }
+        if(answer == 2){
+            cout<<h<<endl;
+            cout<<l<<endl;
+            
+            cout<<"What ball is heavy? ";
+            cin>>h_choice;
+            
+            cout<<"What ball is light? ";
+            cin>>l_choice;
+            
+            if(l_choice == l && h_choice == h){
+                cout<<"You have won"<<endl;
+                return 1;
+                
+            }else{
+                cout<<"some of your calculations went wrong"<<endl;
+                return 0;
+            }
+        }
+    }
+    return 2;
+}
+
+int main(int argc, const char * argv[]) {
+    srand(time(0));
+    game();
+    return 0;
+}
