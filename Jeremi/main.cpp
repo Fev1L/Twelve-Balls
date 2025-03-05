@@ -6,9 +6,17 @@
 //
 
 #include <iostream>
+#include <cstdlib>
 using namespace std;
 
+
+string game(){
+    
+    
+    return "You are win!";
+}
+
 int main(int argc, const char * argv[]) {
-    cout<<"Vlad lox"<<endl;
+    cout<<game()<<endl;
     return 0;
 }
