@@ -10,7 +10,7 @@ int l_choice;
 int h_choice;
 
 int game(){
-    cout<<"The average weight is 2kg, to win you have to find balls the weights 3 and 1 kg, you can choose 3 balls to measure at one time pressing 1, to end the game press 0, to say your answers press 2, have a nice game";
+    cout<<"The average weight is 2kg, to win you have to find balls the weights 3 and 1 kg, you can choose 3 balls to measure their weigth at one time pressing 1, to end the game press 0, to say your answers press 2, have a nice game)";
     int arr[12] = {2,2,2,2,2,2,2,2,2,2,2,2};
     int l = rand() % 11;
     int h = rand() % 11;
@@ -28,11 +28,12 @@ int game(){
     }
     
     for(int i = 0; i <100000; i++){
+        cout<<endl;
         cout<<"What are you going to do? ";
         cin>>answer;
         
         if(answer == 0){
-            cout<<"The game is over";
+            cout<<"The game is over"<<endl;
             return -1;
         }
         if(answer == 1){
@@ -41,12 +42,9 @@ int game(){
             cin>>ball2;
             cin>>ball3;
             cout<<"The sum is "<<arr[ball1]+arr[ball2]+arr[ball3]<<endl;
-            cout<<"What do you want to choose next? 0,1,2";
+            cout<<"What do you want to choose next? 0(end the game), 1(another choice), 2(say your answers)";
         }
         if(answer == 2){
-            cout<<h<<endl;
-            cout<<l<<endl;
-            
             cout<<"What ball is heavy? ";
             cin>>h_choice;
             
