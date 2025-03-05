@@ -41,8 +41,18 @@ int game(){
             cin>>ball1;
             cin>>ball2;
             cin>>ball3;
-            cout<<"The sum is "<<arr[ball1]+arr[ball2]+arr[ball3]<<endl;
-            cout<<"What do you want to choose next? 0(end the game), 1(another choice), 2(say your answers)";
+            if(ball1 < 0 || ball1 > 11){
+                cout<<"No such balls existing ";
+            }else if(ball2 < 0 || ball2 > 11){
+                cout<<"No such balls existing ";
+            }else if(ball3 < 0 || ball3 > 11){
+                cout<<"No such balls existing ";
+            }else if(ball1 == ball2 || ball1 == ball3 || ball2 == ball3){
+                cout<<"You can't choose same balls!!!";
+            }else{
+                cout<<"The sum is "<<arr[ball1]+arr[ball2]+arr[ball3]<<endl;
+                cout<<"What do you want to choose next? 0(end the game), 1(another choice), 2(say your answers)";
+            }
         }
         if(answer == 2){
             cout<<"What ball is heavy? ";
@@ -59,6 +69,8 @@ int game(){
                 cout<<"some of your calculations went wrong"<<endl;
                 return 0;
             }
+        }else if(answer <0 || answer > 2){
+            cout<<"There is no such choice!!!"<<endl;
         }
     }
     return 2;
